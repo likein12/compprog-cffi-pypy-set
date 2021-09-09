@@ -28,3 +28,6 @@ for i in range(Q):
         k = get_k(cms,x-1).key
         print(k)
         remove(cms,k,False)
+
+
+print(cms)
