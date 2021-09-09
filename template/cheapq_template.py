@@ -17,7 +17,7 @@ prin = lib.printer_ll_one
 # write your code here!
 
 """
-This code was created from PyPy CFFI.
+This code was created from PyPy CFFI. (https://github.com/likein12/compprog-cffi-pypy-set)
 
 ```./lib/base.h
 
