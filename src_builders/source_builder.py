@@ -23,7 +23,7 @@ open('./_compprog_cffi.pypy36-pp73-x86_64-linux-gnu.so','wb').write(base64.b85de
 
 code = "\n".join([line.rstrip() for line in open("./draft/draft.py", "r")])
 
-documents = '\n\n"""\nThis code was created from PyPy CFFI.\n\n'
+documents = '\n\n"""\nThis code was created from PyPy CFFI. (https://github.com/likein12/compprog-cffi-pypy-set)\n\n'
 
 docs = []
 for line in open("./lib/temp_compprog.h", "r"):
