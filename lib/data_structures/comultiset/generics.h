@@ -353,7 +353,7 @@ cms_node_TAG* _cms_get_k_TAG(cms_node_TAG* nd, int k, int l){
     int count = nd->count;
     if (l+ls<k && k<=l+ls+count) return nd;
     if (l+ls>=k) return _cms_get_k_TAG(nd->left, k, l);
-    if (l+ls+count<k) return _cms_get_k_TAG(nd->right, k, l+ls+1);
+    if (l+ls+count<k) return _cms_get_k_TAG(nd->right, k, l+ls+count);
 }
 
 cms_node_TAG* cms_get_k_TAG(comultiset_TAG* cms, int k){

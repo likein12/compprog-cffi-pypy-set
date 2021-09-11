@@ -1,4 +1,5 @@
 import base64
+import zlib
 import sys
 import re
 
@@ -25,6 +26,18 @@ code = "\n".join([line.rstrip() for line in open("./draft/draft.py", "r")])
 
 documents = '\n\n"""\nThis code was created from PyPy CFFI. (https://github.com/likein12/compprog-cffi-pypy-set)\n\n'
 
+expander = """you can expand the document with the Python3 code below.
+
+```
+import base64, zlib
+
+bytecode = b'xxxxxxx'
+documents = zlib.decompress(base64.b85decode(bytecode)).decode()
+```
+
+bytecode
+
+"""
 docs = []
 for line in open("./lib/temp_compprog.h", "r"):
     if re.match(r'#include \".*\"', line):
@@ -40,8 +53,8 @@ docs.append('\n```\n')
 docs.append('```' + "./src_builders/temp_compile.py\n")
 docs.append("".join([line1.replace('"', '\\"') for line1 in open("./src_builders/temp_compile.py", "r")]))
 docs.append('\n```\n')
-docs.append('\n"""\n')
-documents = documents + "\n".join(docs)
+
+documents = documents + expander + str(base64.b85encode(zlib.compress("\n".join(docs).encode()))) + '\n"""'
 
 src = header.replace("BINARY_CODE", str(binary)) + code + documents
 

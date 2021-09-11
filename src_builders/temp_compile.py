@@ -162,6 +162,7 @@ cms_node_lf* cms_get_k_lf(comultiset_lf* cms, int k);
 
 
 static ll scanner_ll();
+static ll* scanner_ll_multi(int n);
 static char* scanner_string(int n);
 static void printer_ll_one(ll x);
 static void printer_ll_array_v(ll* x, int n);

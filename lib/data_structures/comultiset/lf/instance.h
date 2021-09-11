@@ -357,7 +357,7 @@ cms_node_lf* _cms_get_k_lf(cms_node_lf* nd, int k, int l){
     int count = nd->count;
     if (l+ls<k && k<=l+ls+count) return nd;
     if (l+ls>=k) return _cms_get_k_lf(nd->left, k, l);
-    if (l+ls+count<k) return _cms_get_k_lf(nd->right, k, l+ls+1);
+    if (l+ls+count<k) return _cms_get_k_lf(nd->right, k, l+ls+count);
 }
 
 cms_node_lf* cms_get_k_lf(comultiset_lf* cms, int k){

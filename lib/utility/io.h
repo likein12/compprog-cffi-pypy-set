@@ -8,9 +8,8 @@ static ll scanner_ll() {
 	return f * x;
 }
 
-//未完成
 static ll* scanner_ll_multi(int n) {
-	ll* res = (ll*)malloc(n*sizeof(int));
+	ll* res = (ll*)malloc(n*sizeof(ll));
 	for (int i=0;i<n;++i) res[i] = scanner_ll();
 	return res;
 }
